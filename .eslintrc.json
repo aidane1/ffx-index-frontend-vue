@@ -1,0 +1,56 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module",
+    "ecmaVersion": 2017
+  },
+  "extends": [
+    "plugin:vue/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }],
+    "no-unused-vars": ["error"],
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": 5,
+      "multiline": {
+        "max": 5,
+        "allowFirstLine": false
+      }
+    }],
+    "vue/order-in-components": ["error", {
+      "order": [
+        "el",
+        "name",
+        "parent",
+        "functional",
+        ["delimiters", "comments"],
+        "extends",
+        "mixins",
+        "inheritAttrs",
+        "model",
+        "data",
+        ["props", "propsData"],
+        "computed",
+        "watch",
+        "LIFECYCLE_HOOKS",
+        "methods",
+        ["template", "render"],
+        "renderError",
+        ["components", "directives", "filters"]
+      ]
+    }]
+  }
+}
