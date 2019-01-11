@@ -1,8 +1,6 @@
 <template lang="pug">
-.home
-  img(alt='Vue logo', src='../assets/logo.png')
+h1 home
 </template>
-
 <script>
 // @ is an alias to /src
 

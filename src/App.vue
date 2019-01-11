@@ -1,27 +1,34 @@
 <template lang="pug">
-#app
-  #nav
-    router-link(to='/') Home
-    router-link(to='/about') About
-  router-view
+//- .content-container
+//-   sidebar.content-left
+//-   main.content-right
+//-     router-view
+.content-container
+  #left.column
+    .top-left
+    .bottom
+      sidebar
+  #right.column
+    .top-right
+    .bottom
 </template>
+<script>
+import Sidebar from '@/components/Sidebar'
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    Sidebar
   }
 }
+</script>
+
+<style lang="scss">
+// @import 'bulma/sass/utilities/_all.sass';
+// @import 'bulma/sass/base/_all.sass';
+// @import 'bulma/sass/components/_all.sass';
+// @import 'bulma/sass/elements/_all.sass';
+// @import 'bulma/sass/grid/_all.sass';
+// @import 'bulma/sass/layout/_all.sass';
+
+@import './assets/stylesheets/main';
 </style>
