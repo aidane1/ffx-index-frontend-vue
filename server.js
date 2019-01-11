@@ -1,21 +1,13 @@
-const http = require('http')
-const fs = require('fs')
-const httpPort = 8000
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 8000
 
-http
-  .createServer((req, res) => {
-    fs.readFile('index.htm', 'utf-8', (err, content) => {
-      if (err) {
-        console.log('We cannot open "index.htm" file.')
-      }
+app.use(express.static('dist'))
 
-      res.writeHead(200, {
-        'Content-Type': 'text/html; charset=utf-8'
-      })
+app.use(function(req, res) {
+  res.sendFile(__dirname + '/dist/index.html')
+})
 
-      res.end(content)
-    })
-  })
-  .listen(httpPort, () => {
-    console.log('Server listening on: http://localhost:%s', httpPort)
-  })
+const server = app.listen(port, function() {
+  console.log('Listening on port %d', server.address().port)
+})
