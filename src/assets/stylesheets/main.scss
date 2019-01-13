@@ -1,60 +1,48 @@
-// .content-container {
-//   display: flex;
-//   flex-flow: row wrap;
+@import 'variables';
+
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/base/_all.sass';
+@import 'bulma/sass/components/_all.sass';
+@import 'bulma/sass/elements/_all.sass';
+@import 'bulma/sass/grid/_all.sass';
+@import 'bulma/sass/layout/_all.sass';
+
+@import 'overrides';
+@import 'sidebar';
+
+// .main-container, html, body {
+//   height: 100%;
+// }
+// .sidebar, .subject-content {
+//   float: left;
+//   width: $sidebar-expanded-width;
+//   height: 100%;
+//   overflow: scroll;
+//   position: relative;
+// }
+// .subject-content {
+//   padding: $base-padding;
+//   width: $content-expanded-width;
 // }
 
-// .content-right {
-//   display: flex;
-//   flex-direction: column;
-//   width: calc(100% - 250px);
-// }
-
-// .content-left { 
-//   flex: 1 250px; 
-//   background: hotpink;
-//   overflow: auto;
-
-//   .test {
-//     position: fixed;
-//   }
-// }
-html {
+.main-container,
+html,
+body {
   height: 100%;
 }
-
-body {
-  height: 100%;   
-  overflow: hidden;  /*makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)*/
-  margin: 0px;  /*removes default style*/
-  display: flex;  /*enables flex content for its children*/
-  box-sizing: border-box;
+.sidebar,
+.subject-content {
+  float: left;
+  height: 100%;
+  overflow: scroll;
 }
-
-.column {
-  height: 100%;  /*allows both columns to span the full height of the browser window*/
+.main-container {
   display: flex;
-  flex-direction: column;  /*places the left and right headers above the bottom content*/
+  overflow-y: hidden;
 }
-
-#left {
-  flex-shrink: 0;  /*makes sure that content is not cut off in a smaller browser window*/
-}
-
-.top-left {
-  flex-shink: 0;
-}
-
-.top-right {
-  flex-shrink: 0;
-  display: inline-flex;
-}
-
-ul {
-  display: inline-flex;
-  list-style: none;
-}
-
-.bottom {
-  flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
-  overflow-y: auto;  /*adds scroll to this container*/
+.subject-content {
+  background-color: $grey-darker;
+  overflow-y: scroll;
+  padding: $content-padding;
+  width: $content-expanded-width;
 }

@@ -1,0 +1,23 @@
+.sidebar {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: $sidebar-padding;
+  width: $sidebar-expanded-width;
+
+  &__toggle-button {
+    width: $toggle-button-side-length;
+    height: $toggle-button-side-length;
+    position: absolute;
+    left: $toggle-button-expanded-offset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 50%;
+  }
+}
+.sidebar-collapsed {
+  .sidebar {
+    width: $sidebar-collapsed-width;
+  }
+}

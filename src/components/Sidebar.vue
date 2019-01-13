@@ -1,41 +1,20 @@
 <template lang="pug">
 aside.menu
-  .test
-    p.menu-label
-      | General
-    ul.menu-list
-      li
-        a Dashboard
-      li
-        a Customers
-    p.menu-label
-      | Administration
-    ul.menu-list
-      li
-        a Team Settings
-      li
-        a.is-active Manage Your Team
-        ul
-          li
-            a Members
-          li
-            a Plugins
-          li
-            a Add a member
-      li
-        a Invitations
-      li
-        a Cloud Storage Environment Settings
-      li
-        a Authentication
-    p.menu-label
-      | Transactions
-    ul.menu-list
-      li
-        a Payments
-      li
-        a Transfers
-      li
-        a Balance
-
+  .sidebar__toggle-button
+    i.fas.fa-bars
+  ul.menu-list
+    li(v-for='section in sections', :key='section.label')
+      a {{ section.label }}
 </template>
+<script>
+import sidebar from './sidebar'
+
+export default {
+  data() {
+    return {
+      expanded: true,
+      sections: sidebar
+    }
+  }
+}
+</script>
