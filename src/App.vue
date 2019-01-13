@@ -1,6 +1,6 @@
 <template lang="pug">
-.main-container
-  sidebar.sidebar
+.main-container(:class='{ "sidebar-collapsed": !sidebarExpanded}')
+  sidebar.sidebar(@toggle-sidebar='sidebarExpanded = !sidebarExpanded')
   main.subject-content
     | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lorem mauris. Nulla fermentum tincidunt nulla et dignissim. In porttitor sem id velit lobortis aliquam. Duis et purus ac orci porttitor luctus at quis leo. Mauris vulputate pellentesque est, sit amet egestas tellus facilisis sit amet. Cras sodales bibendum tellus, a gravida tortor hendrerit sed. Pellentesque blandit posuere nisl, sit amet cursus nisl dignissim non.
     | Vivamus at orci sit amet elit lacinia posuere sit amet malesuada elit. Duis quis luctus magna. Phasellus pharetra urna a dolor vulputate ultrices. Nam ornare orci justo, et fringilla lacus. Etiam tristique enim sed enim tempus tincidunt. Fusce rutrum dui at erat iaculis suscipit. Aenean id urna sit amet arcu pulvinar accumsan. Aenean malesuada, nisi sed ultricies tempus, elit nisl interdum leo, sit amet bibendum eros arcu pretium nisi. Nam magna dolor, lacinia adipiscing iaculis ac, viverra sit amet ligula. Fusce vitae est sit amet ipsum iaculis molestie a ac nisi. Curabitur porta nunc quis magna interdum nec hendrerit ligula suscipit. Curabitur non accumsan sapien. Donec non ligula a lorem lobortis scelerisque ac a sem. Sed porta blandit odio a ullamcorper.
@@ -23,6 +23,11 @@
 import Sidebar from '@/components/Sidebar'
 
 export default {
+  data() {
+    return {
+      sidebarExpanded: true
+    }
+  },
   components: {
     Sidebar
   }

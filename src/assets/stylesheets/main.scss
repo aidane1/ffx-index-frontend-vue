@@ -9,21 +9,7 @@
 
 @import 'overrides';
 @import 'sidebar';
-
-// .main-container, html, body {
-//   height: 100%;
-// }
-// .sidebar, .subject-content {
-//   float: left;
-//   width: $sidebar-expanded-width;
-//   height: 100%;
-//   overflow: scroll;
-//   position: relative;
-// }
-// .subject-content {
-//   padding: $base-padding;
-//   width: $content-expanded-width;
-// }
+@import 'content';
 
 .main-container,
 html,
@@ -32,17 +18,10 @@ body {
 }
 .sidebar,
 .subject-content {
-  float: left;
   height: 100%;
   overflow: scroll;
 }
 .main-container {
   display: flex;
   overflow-y: hidden;
-}
-.subject-content {
-  background-color: $grey-darker;
-  overflow-y: scroll;
-  padding: $content-padding;
-  width: $content-expanded-width;
 }

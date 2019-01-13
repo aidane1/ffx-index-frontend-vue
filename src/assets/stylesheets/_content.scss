@@ -1,0 +1,31 @@
+.subject-content {
+  background-color: $grey-darker;
+  overflow-y: scroll;
+  padding: $content-padding;
+
+  @include from($tablet) {
+    width: $content-expanded-width;
+    transition: width 0.3s;
+  }
+
+  @include until($tablet) {
+    width: inherit;
+    transform: translateX($toggle-button-expanded-offset);
+    transition: transform 0.3s;
+  }
+}
+.sidebar-collapsed {
+  @include from($tablet) {
+    .subject-content {
+      width: $content-collapsed-width;
+      transition: width 0.3s;
+    }
+  }
+
+  @include until($tablet) {
+    .subject-content {
+      transform: translateX(calc(#{$toggle-button-side-length} - #{$sidebar-collapsed-width}));
+      transition: transform 0.3s;
+    }
+  }
+}

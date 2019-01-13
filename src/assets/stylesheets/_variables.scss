@@ -8,8 +8,14 @@ $toggle-button-expanded-offset: calc(
   2px
 );
 
-$sidebar-collapsed-width: 60px;
+$sidebar-collapsed-width: 30px;
 $content-collapsed-width: calc(100% - #{$sidebar-collapsed-width});
+
+$toggle-button-collapsed-offset: calc(
+  #{$sidebar-collapsed-width} - 
+  #{$toggle-button-side-length / 2} - 
+  2px
+);
 
 $sidebar-padding: 0.6em;
 $content-padding: 1.6em;

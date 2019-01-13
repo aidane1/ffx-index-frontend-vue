@@ -1,6 +1,6 @@
 <template lang="pug">
 aside.menu
-  .sidebar__toggle-button
+  .sidebar__toggle-button(@click='toggleSidebar')
     i.fas.fa-bars
   ul.menu-list
     li(v-for='section in sections', :key='section.label')
@@ -14,6 +14,12 @@ export default {
     return {
       expanded: true,
       sections: sidebar
+    }
+  },
+  methods: {
+    toggleSidebar() {
+      this.expanded = !this.expanded
+      this.$emit('toggle-sidebar')
     }
   }
 }
