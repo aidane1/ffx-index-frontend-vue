@@ -298,3 +298,20 @@ ul {
   }
 }
 }
+
+.menu-list li ul {
+  margin-top: 0px;
+  margin-bottom: 0.2em;
+  margin-left: 1.5em;
+
+  a {
+    padding-top: 0.2em;
+    padding-left: 0.2em;
+    padding-bottom: 0.2em;
+  }
+}
+
+.menu-list.menu-list-spaced li a {
+  display: flex;
+  justify-content: space-between;
+}
