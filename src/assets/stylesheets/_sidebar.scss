@@ -4,7 +4,8 @@
   padding: $sidebar-padding;
   width: $sidebar-expanded-width;
   transition: width 0.3s;
-  margin-top: 2.5em;
+  padding-top: 2.5em;
+  padding-bottom: 1em;
 
   .menu-list__container {
     width: 100%;
