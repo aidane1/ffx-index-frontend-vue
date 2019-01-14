@@ -1,7 +1,9 @@
 const express = require('express')
+const compression = require('compression')
 const app = express()
 const port = process.env.PORT || 8000
 
+app.use(compression())
 app.use(express.static('dist'))
 
 app.use(function(req, res) {

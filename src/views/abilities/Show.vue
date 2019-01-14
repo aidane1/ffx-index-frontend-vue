@@ -13,8 +13,18 @@ export default {
       }
     })
   },
+  watch: {
+    $route() {
+      this.loadAbility()
+    }
+  },
   async created() {
-    await this.$store.dispatch('fetchAbility', this.$route.params.slug)
+    await this.loadAbility()
+  },
+  methods: {
+    async loadAbility() {
+      await this.$store.dispatch('fetchAbility', this.$route.params.slug)
+    }
   }
 }
 </script>
