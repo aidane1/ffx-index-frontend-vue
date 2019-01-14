@@ -1,5 +1,10 @@
 <template lang="pug">
-li(@mouseover='startPreload', @mouseout='cancelPreload')
+li(
+  @mouseover='startPreload', 
+  @mouseout='cancelPreload',
+  @touchstart='startPreload',
+  @touchend='cancelPreload'
+)
   router-link(:to='dropdownItem.path') {{ label }}
 </template>
 <script>

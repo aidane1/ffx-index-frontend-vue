@@ -1,7 +1,9 @@
 <template lang="pug">
 li( 
   @mouseover='startPreload', 
-  @mouseout='cancelPreload'
+  @mouseout='cancelPreload',
+  @touchstart='startPreload',
+  @touchend='cancelPreload'
 )
   router-link(:to='{ name: "ability_index" }') Ability
     span.sidebar__dropdown-arrow(
@@ -36,6 +38,9 @@ export default {
     })
   },
   methods: {
+    test() {
+      console.log('test')
+    },
     async fetchData() {
       await this.$store.dispatch('fetchAbilities')
     },
