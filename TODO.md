@@ -1,0 +1,1 @@
+- Add ETag or other caching on Phoenix side
