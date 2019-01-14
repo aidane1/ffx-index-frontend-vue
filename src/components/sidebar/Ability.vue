@@ -3,8 +3,11 @@ li(
   @mouseover='startPreload', 
   @mouseout='cancelPreload'
 )
-  a(@click='expanded = !expanded') Ability
-    span(:class='sectionToggleClass')
+  router-link(:to='{ name: "ability_index" }') Ability
+    span.sidebar__dropdown-arrow(
+      :class='sectionToggleClass', 
+      @click.prevent='expanded = !expanded'
+    )
   ul(v-show='expanded')
     dropdown-item(
        v-for='ability in abilities',
