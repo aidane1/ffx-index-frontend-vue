@@ -19,7 +19,7 @@ body {
 .sidebar,
 .subject-content {
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .main-container {
   display: flex;

@@ -3,29 +3,32 @@
   overflow-y: scroll;
   padding: $content-padding;
 
-  @include from($tablet) {
+  // @include from($tablet) {
     width: $content-expanded-width;
     transition: width 0.3s;
-  }
+  // }
 
   @include until($tablet) {
-    width: inherit;
-    transform: translateX($toggle-button-expanded-offset);
-    transition: transform 0.3s;
+    // width: inherit;
+    padding-right: 0;
+    overflow-x: hidden;
+    transform: translateX(0px);
+    // transition: transform 0.3s;
   }
 }
 .sidebar-collapsed {
-  @include from($tablet) {
+  // @include from($tablet) {
     .subject-content {
       width: $content-collapsed-width;
       transition: width 0.3s;
     }
-  }
+  // }
 
   @include until($tablet) {
     .subject-content {
-      transform: translateX(calc(#{$toggle-button-side-length} - #{$sidebar-collapsed-width}));
-      transition: transform 0.3s;
+      // transform: translateX(calc(#{$toggle-button-side-length} - #{$sidebar-collapsed-width}));
+      // transition: transform 0.3s;
+      padding-right: $content-padding;
     }
   }
 }
