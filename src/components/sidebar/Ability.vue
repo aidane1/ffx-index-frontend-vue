@@ -1,10 +1,9 @@
 <template lang="pug">
-li(
-  @click='expanded = !expanded', 
+li( 
   @mouseover='startPreload', 
   @mouseout='cancelPreload'
 )
-  a Ability
+  a(@click='expanded = !expanded') Ability
     span(:class='sectionToggleClass')
   ul(v-show='expanded')
     dropdown-item(

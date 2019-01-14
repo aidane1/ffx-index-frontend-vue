@@ -1,13 +1,13 @@
 <template lang="pug">
 li(@mouseover='startPreload', @mouseout='cancelPreload')
-  a {{ label }}
+  router-link(:to='dropdownItem.path') {{ label }}
 </template>
 <script>
 export default {
   data() {
     return {
       timeoutFn: null,
-      timeout: 120
+      timeout: 70
     }
   },
   props: {
