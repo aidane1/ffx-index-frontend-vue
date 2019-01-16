@@ -38,9 +38,6 @@ export default {
     })
   },
   methods: {
-    test() {
-      console.log('test')
-    },
     async fetchData() {
       await this.$store.dispatch('fetchAbilities')
     },
