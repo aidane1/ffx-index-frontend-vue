@@ -3,27 +3,19 @@ pre
   code {{ ability }}
 </template>
 <script>
-import { mapState } from 'vuex'
+import ShowBase from '../base/ShowBase.vue'
 
 export default {
-  computed: {
-    ...mapState({
-      ability(state) {
-        return state.ability[this.$route.params.slug]
-      }
-    })
-  },
-  watch: {
-    $route() {
-      this.loadAbility()
+  extends: ShowBase,
+  data() {
+    return {
+      stateKey: 'ability',
+      fetchKey: 'fetchAbility'
     }
   },
-  async created() {
-    await this.loadAbility()
-  },
-  methods: {
-    async loadAbility() {
-      await this.$store.dispatch('fetchAbility', this.$route.params.slug)
+  computed: {
+    ability() {
+      return this.record
     }
   }
 }

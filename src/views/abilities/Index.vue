@@ -3,15 +3,20 @@ pre
   code {{ abilities }}
 </template>
 <script>
-import { mapState } from 'vuex'
+import IndexBase from '../base/IndexBase'
+
 export default {
-  computed: {
-    ...mapState({
-      abilities: (state) => state.abilities
-    })
+  extends: IndexBase,
+  data() {
+    return {
+      stateKey: 'abilities',
+      fetchKey: 'fetchAbilities'
+    }
   },
-  async created() {
-    await this.$store.dispatch('fetchAbilities')
+  computed: {
+    abilities() {
+      return this.records
+    }
   }
 }
 </script>
