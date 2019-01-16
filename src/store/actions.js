@@ -3,6 +3,12 @@ import { fetchIndex, fetchShow } from './helpers'
 const apiBase = 'http://localhost:4000/api'
 
 export default {
+  fetchItems(store) {
+    fetchIndex(store, 'items', `${apiBase}/items`)
+  },
+  fetchItem(store, slug) {
+    fetchShow(store, 'item', `${apiBase}/items/${slug}`, slug)
+  },
   fetchAbilities(store) {
     fetchIndex(store, 'abilities', `${apiBase}/abilities`)
   },

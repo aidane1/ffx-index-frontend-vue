@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 
+import items from './routes/items'
 import abilities from './routes/abilities'
 
 Vue.use(Router)
@@ -22,6 +23,7 @@ export default new Router({
       name: 'home',
       component: Home
     },
+    ...items,
     ...abilities
   ]
 })
