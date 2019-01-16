@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 
 import items from './routes/items'
+import keyItems from './routes/key_items'
 import abilities from './routes/abilities'
 
 Vue.use(Router)
@@ -24,6 +25,7 @@ export default new Router({
       component: Home
     },
     ...items,
+    ...keyItems,
     ...abilities
   ]
 })
