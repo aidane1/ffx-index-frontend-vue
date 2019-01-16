@@ -7,11 +7,13 @@ aside.menu
       ability
       item
       key-item
+      location
 </template>
 <script>
 import Item from './sidebar/Item.vue'
 import Ability from './sidebar/Ability.vue'
 import KeyItem from './sidebar/KeyItem.vue'
+import Location from './sidebar/Location.vue'
 
 export default {
   data() {
@@ -28,7 +30,8 @@ export default {
   components: {
     Item,
     Ability,
-    KeyItem
+    KeyItem,
+    Location
   }
 }
 </script>

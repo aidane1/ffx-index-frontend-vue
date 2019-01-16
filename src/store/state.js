@@ -4,5 +4,7 @@ export default {
   keyItem: {},
   keyItems: [],
   ability: {},
-  abilities: []
+  abilities: [],
+  location: {},
+  locations: []
 }

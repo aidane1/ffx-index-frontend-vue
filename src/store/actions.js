@@ -20,5 +20,11 @@ export default {
   },
   fetchAbility(store, slug) {
     fetchShow(store, 'ability', `${apiBase}/abilities/${slug}`, slug)
+  },
+  fetchLocations(store) {
+    fetchIndex(store, 'locations', `${apiBase}/locations`)
+  },
+  fetchLocation(store, slug) {
+    fetchShow(store, 'location', `${apiBase}/locations/${slug}`, slug)
   }
 }
