@@ -5,7 +5,7 @@ li(
   @touchstart='startPreload',
   @touchend='cancelPreload'
 )
-  router-link(:to='dropdownItem.path') {{ label }}
+  router-link(:to='dropdownItem.path') {{ dropdownItem.name }}
 </template>
 <script>
 export default {
@@ -19,10 +19,6 @@ export default {
     dropdownItem: {
       type: Object,
       default: () => {}
-    },
-    label: {
-      type: String,
-      default: ''
     },
     fetchFn: {
       type: Function,

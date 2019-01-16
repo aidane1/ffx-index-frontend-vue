@@ -6,10 +6,12 @@ aside.menu
     ul.menu-list.menu-list-spaced
       ability
       item
+      key-item
 </template>
 <script>
 import Item from './sidebar/Item.vue'
 import Ability from './sidebar/Ability.vue'
+import KeyItem from './sidebar/KeyItem.vue'
 
 export default {
   data() {
@@ -25,7 +27,8 @@ export default {
   },
   components: {
     Item,
-    Ability
+    Ability,
+    KeyItem
   }
 }
 </script>

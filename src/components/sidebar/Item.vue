@@ -1,39 +1,32 @@
 <template lang="pug">
-li( 
-  @mouseover='startPreload', 
-  @mouseout='cancelPreload',
-  @touchstart='startPreload',
-  @touchend='cancelPreload'
+category(
+  :records='items', 
+  :fetch-index-fn='fetchItems', 
+  :dropdown-fetch-fn='fetchItem', 
+  :display-data='displayData'
 )
-  router-link(:to='{ name: "item_index" }') Items
-    span.sidebar__dropdown-arrow(
-      :class='sectionToggleClass', 
-      @click.prevent='expanded = !expanded'
-    )
-  ul(v-show='expanded')
-    dropdown-item(
-       v-for='item in items',
-      :key='item.id',
-      :dropdown-item='item',
-      :label='item.name',
-      :fetch-fn='fetchItem'
-    )
 </template>
 <script>
 import { mapState } from 'vuex'
 
 import Category from './Category'
-import DropdownItem from './DropdownItem'
 
 export default {
-  extends: Category,
+  data() {
+    return {
+      displayData: {
+        name: 'Items',
+        route: 'item_index'
+      }
+    }
+  },
   computed: {
     ...mapState({
       items: (state) => state.items
     })
   },
   methods: {
-    async fetchData() {
+    async fetchItems() {
       await this.$store.dispatch('fetchItems')
     },
     async fetchItem(slug) {
@@ -41,7 +34,7 @@ export default {
     }
   },
   components: {
-    DropdownItem
+    Category
   }
 }
 </script>

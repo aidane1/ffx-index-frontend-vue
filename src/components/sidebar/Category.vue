@@ -1,12 +1,55 @@
 <template lang="pug">
+li( 
+  @mouseover='startPreload', 
+  @mouseout='cancelPreload',
+  @touchstart='startPreload',
+  @touchend='cancelPreload'
+)
+  router-link(:to='{ name: displayData.route }') {{ displayData.name }}
+    span.sidebar__dropdown-arrow(
+      :class='sectionToggleClass', 
+      @click.prevent='expanded = !expanded'
+    )
+  ul(v-show='expanded')
+    dropdown-item(
+       v-for='record in records',
+      :key='record.id',
+      :dropdown-item='record',
+      :label='record.name',
+      :fetch-fn='dropdownFetchFn'
+    )
 </template>
 <script>
+import DropdownItem from './DropdownItem'
+
 export default {
   data() {
     return {
       expanded: false,
       timeoutFn: null,
       timeout: 50
+    }
+  },
+  props: {
+    records: {
+      type: Array,
+      required: true,
+      default: () => []
+    },
+    fetchIndexFn: {
+      type: Function,
+      required: true,
+      default: () => []
+    },
+    dropdownFetchFn: {
+      type: Function,
+      required: true,
+      default: () => []
+    },
+    displayData: {
+      type: Object,
+      required: true,
+      default: () => {}
     }
   },
   computed: {
@@ -21,12 +64,15 @@ export default {
   methods: {
     startPreload() {
       this.timeoutFn = setTimeout(() => {
-        this.fetchData()
+        this.fetchIndexFn()
       }, this.timeout)
     },
     cancelPreload() {
       clearTimeout(this.timeoutFn)
     }
+  },
+  components: {
+    DropdownItem
   }
 }
 </script>

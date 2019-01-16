@@ -9,6 +9,12 @@ export default {
   fetchItem(store, slug) {
     fetchShow(store, 'item', `${apiBase}/items/${slug}`, slug)
   },
+  fetchKeyItems(store) {
+    fetchIndex(store, 'keyItems', `${apiBase}/key-items`)
+  },
+  fetchKeyItem(store, slug) {
+    fetchShow(store, 'keyItem', `${apiBase}/key-items/${slug}`, slug)
+  },
   fetchAbilities(store) {
     fetchIndex(store, 'abilities', `${apiBase}/abilities`)
   },
