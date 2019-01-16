@@ -1,6 +1,6 @@
 .sidebar {
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: $sidebar-padding;
   width: $sidebar-expanded-width;
   transition: width 0.3s;
@@ -50,6 +50,7 @@
   .sidebar {
     width: $sidebar-collapsed-width;
     transition: width 0.3s;
+    overflow-y: hidden;
 
     .menu-list__container {
       > ul {
