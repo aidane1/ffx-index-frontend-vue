@@ -15,6 +15,12 @@ export default {
   fetchItem(store, slug) {
     fetchShow(store, 'item', `${apiBase}/items/${slug}`, slug)
   },
+  fetchMonsters(store) {
+    fetchIndex(store, 'monsters', `${apiBase}/monsters`)
+  },
+  fetchMonster(store, slug) {
+    fetchShow(store, 'monster', `${apiBase}/monsters/${slug}`, slug)
+  },
   fetchKeyItems(store) {
     fetchIndex(store, 'keyItems', `${apiBase}/key-items`)
   },

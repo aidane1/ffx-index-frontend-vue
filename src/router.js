@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
+import home from './routes/home'
 import items from './routes/items'
 import mixes from './routes/mixes'
+import monsters from './routes/monsters'
 import keyItems from './routes/key_items'
 import abilities from './routes/abilities'
 import locations from './routes/locations'
@@ -21,13 +22,10 @@ export default new Router({
     return { x: 0, y: 0 }
   },
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
+    ...home,
     ...items,
     ...mixes,
+    ...monsters,
     ...keyItems,
     ...abilities,
     ...locations,

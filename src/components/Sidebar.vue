@@ -9,11 +9,13 @@ aside.menu
       key-item
       location
       mixes
+      monster
 </template>
 <script>
 import Item from './sidebar/Item.vue'
 import Mixes from './sidebar/Mixes.vue'
 import Ability from './sidebar/Ability.vue'
+import Monster from './sidebar/Monster.vue'
 import KeyItem from './sidebar/KeyItem.vue'
 import Location from './sidebar/Location.vue'
 
@@ -33,6 +35,7 @@ export default {
     Item,
     Mixes,
     Ability,
+    Monster,
     KeyItem,
     Location
   }

@@ -3,6 +3,8 @@ export default {
   mixes: [],
   item: {},
   items: [],
+  monster: {},
+  monsters: [],
   keyItem: {},
   keyItems: [],
   ability: {},
