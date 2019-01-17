@@ -1,4 +1,6 @@
 export default {
+  mix: {},
+  mixes: [],
   item: {},
   items: [],
   keyItem: {},

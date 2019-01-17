@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 
 import items from './routes/items'
+import mixes from './routes/mixes'
 import keyItems from './routes/key_items'
 import abilities from './routes/abilities'
 import locations from './routes/locations'
@@ -26,8 +27,15 @@ export default new Router({
       component: Home
     },
     ...items,
+    ...mixes,
     ...keyItems,
     ...abilities,
-    ...locations
+    ...locations,
+    {
+      path: '*',
+      redirect: {
+        name: 'home'
+      }
+    }
   ]
 })

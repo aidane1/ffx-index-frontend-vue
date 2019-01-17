@@ -8,9 +8,11 @@ aside.menu
       item
       key-item
       location
+      mixes
 </template>
 <script>
 import Item from './sidebar/Item.vue'
+import Mixes from './sidebar/Mixes.vue'
 import Ability from './sidebar/Ability.vue'
 import KeyItem from './sidebar/KeyItem.vue'
 import Location from './sidebar/Location.vue'
@@ -29,6 +31,7 @@ export default {
   },
   components: {
     Item,
+    Mixes,
     Ability,
     KeyItem,
     Location
