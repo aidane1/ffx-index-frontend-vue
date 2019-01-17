@@ -25,6 +25,11 @@ export default {
       expanded: true
     }
   },
+  created() {
+    if (window.outerWidth <= 575) {
+      this.toggleSidebar()
+    }
+  },
   methods: {
     toggleSidebar() {
       this.expanded = !this.expanded
