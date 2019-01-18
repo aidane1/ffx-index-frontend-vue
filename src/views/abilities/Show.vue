@@ -1,10 +1,11 @@
 <template lang="pug">
-div
+div(v-if='ability')
   section
     h1.title {{ ability.name }}
       small.subject-content__title--secondary ({{ ability.ability_type }})
     h2.subtitle {{ ability.effect }}
     hr
+    item-link(:item='ability.item') test
   section
     pre
       code {{ ability }}

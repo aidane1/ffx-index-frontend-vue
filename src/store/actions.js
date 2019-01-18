@@ -1,6 +1,6 @@
 import { fetchIndex, fetchShow } from './helpers'
 
-const apiBase = 'http://192.168.1.169:4000/api'
+const apiBase = 'http://localhost:4000/api'
 
 export default {
   fetchMixes(store) {

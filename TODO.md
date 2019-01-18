@@ -1,2 +1,3 @@
 - Add ETag or other caching on Phoenix side
 - Remove unneeded bulma modules to cut down css
+- Add "names" to all vue components
