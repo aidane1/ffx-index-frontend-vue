@@ -1,33 +1,33 @@
 .subject-content {
   background-color: $grey-darker;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: $content-padding;
-
-  // @include from($tablet) {
-    width: $content-expanded-width;
-    transition: width 0.3s;
-  // }
+  padding-top: $content-padding * 2;
+  width: $content-expanded-width;
+  transition: width 0.3s;
 
   @include until($tablet) {
-    // width: inherit;
     padding-right: 0;
     overflow-x: hidden;
     transform: translateX(0px);
-    // transition: transform 0.3s;
+  }
+
+  &__title {
+    &--secondary {
+      color: $grey-light;
+      margin-left: 0.5rem;
+      font-size: 1.25rem;
+    }
   }
 }
 .sidebar-collapsed {
-  // @include from($tablet) {
-    .subject-content {
-      width: $content-collapsed-width;
-      transition: width 0.3s;
-    }
-  // }
+  .subject-content {
+    width: $content-collapsed-width;
+    transition: width 0.3s;
+  }
 
   @include until($tablet) {
     .subject-content {
-      // transform: translateX(calc(#{$toggle-button-side-length} - #{$sidebar-collapsed-width}));
-      // transition: transform 0.3s;
       padding-right: $content-padding;
     }
   }

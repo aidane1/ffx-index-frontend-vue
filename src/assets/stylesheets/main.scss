@@ -7,6 +7,7 @@
 @import 'bulma/sass/grid/_all.sass';
 @import 'bulma/sass/layout/_all.sass';
 
+@import 'spacing';
 @import 'overrides';
 @import 'sidebar';
 @import 'content';
@@ -15,6 +16,7 @@
 html,
 body {
   height: 100%;
+  overflow-y: auto;
 }
 .sidebar,
 .subject-content {

@@ -1,6 +1,13 @@
 <template lang="pug">
-pre
-  code {{ ability }}
+div
+  section
+    h1.title {{ ability.name }}
+      small.subject-content__title--secondary ({{ ability.ability_type }})
+    h2.subtitle {{ ability.effect }}
+    hr
+  section
+    pre
+      code {{ ability }}
 </template>
 <script>
 import ShowBase from '../base/ShowBase.vue'
