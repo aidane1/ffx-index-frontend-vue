@@ -2,7 +2,7 @@
 category(
   :records='abilities', 
   :fetch-index-fn='fetchAbilities', 
-  :dropdown-fetch-fn='fetchAbility', 
+  :dropdown-fetch-params='abilityParams', 
   :display-data='displayData'
 )
 </template>
@@ -29,8 +29,8 @@ export default {
     async fetchAbilities() {
       await this.$store.dispatch('fetchAbilities')
     },
-    async fetchAbility(slug) {
-      await this.$store.dispatch('fetchAbility', slug)
+    abilityParams(slug) {
+      return ['fetchAbility', slug]
     }
   },
   components: {

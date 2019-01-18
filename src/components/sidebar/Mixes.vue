@@ -2,7 +2,7 @@
 category(
   :records='mixes', 
   :fetch-index-fn='fetchMixes', 
-  :dropdown-fetch-fn='fetchMix', 
+  :dropdown-fetch-params='mixParams', 
   :display-data='displayData'
 )
 </template>
@@ -29,8 +29,8 @@ export default {
     async fetchMixes() {
       await this.$store.dispatch('fetchMixes')
     },
-    async fetchMix(slug) {
-      await this.$store.dispatch('fetchMix', slug)
+    mixParams(slug) {
+      return ['fetchMix', slug]
     }
   },
   components: {

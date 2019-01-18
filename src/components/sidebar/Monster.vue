@@ -2,7 +2,7 @@
 category(
   :records='monsters', 
   :fetch-index-fn='fetchMonsters', 
-  :dropdown-fetch-fn='fetchMonster', 
+  :dropdown-fetch-params='monsterParams', 
   :display-data='displayData'
 )
 </template>
@@ -29,8 +29,8 @@ export default {
     async fetchMonsters() {
       await this.$store.dispatch('fetchMonsters')
     },
-    async fetchMonster(slug) {
-      await this.$store.dispatch('fetchMonster', slug)
+    monsterParams(slug) {
+      return ['fetchMonster', slug]
     }
   },
   components: {

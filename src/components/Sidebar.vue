@@ -4,12 +4,12 @@ aside.menu
     i.fas.fa-bars
   .menu-list__container
     ul.menu-list.menu-list-spaced
-      //- ability
+      ability
       item
-      //- key-item
-      //- location
-      //- mixes
-      //- monster
+      key-item
+      location
+      mixes
+      monster
 </template>
 <script>
 import Item from './sidebar/Item.vue'

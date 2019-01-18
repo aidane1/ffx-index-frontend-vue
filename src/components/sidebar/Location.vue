@@ -2,7 +2,7 @@
 category(
   :records='locations', 
   :fetch-index-fn='fetchLocations', 
-  :dropdown-fetch-fn='fetchLocation', 
+  :dropdown-fetch-params='locationParams', 
   :display-data='displayData'
 )
 </template>
@@ -29,8 +29,8 @@ export default {
     async fetchLocations() {
       await this.$store.dispatch('fetchLocations')
     },
-    async fetchLocation(slug) {
-      await this.$store.dispatch('fetchLocation', slug)
+    locationParams(slug) {
+      return ['fetchLocation', slug]
     }
   },
   components: {
