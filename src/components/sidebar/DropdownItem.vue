@@ -1,11 +1,15 @@
 <template lang="pug">
-li(
-  @mouseover='startPreload', 
-  @mouseout='cancelPreload',
-  @touchstart='startPreload',
-  @touchend='cancelPreload'
-)
-  router-link(:to='dropdownItem.path') {{ dropdownItem.name }}
+preload-link(
+  :path='dropdownItem.path',
+  :fetch-params='fetchParams'
+) {{ dropdownItem.name }}
+//- li(
+//-   @mouseover='startPreload', 
+//-   @mouseout='cancelPreload',
+//-   @touchstart='startPreload',
+//-   @touchend='cancelPreload'
+//- )
+//-   router-link(:to='dropdownItem.path') {{ dropdownItem.name }}
 </template>
 <script>
 export default {
@@ -20,9 +24,9 @@ export default {
       type: Object,
       default: () => {}
     },
-    fetchFn: {
-      type: Function,
-      default: () => {}
+    fetchParams: {
+      type: Array,
+      required: true
     }
   },
   methods: {

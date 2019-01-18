@@ -2,7 +2,7 @@
 category(
   :records='items', 
   :fetch-index-fn='fetchItems', 
-  :dropdown-fetch-fn='fetchItem', 
+  :dropdown-fetch-params='itemParams', 
   :display-data='displayData'
 )
 </template>
@@ -29,8 +29,8 @@ export default {
     async fetchItems() {
       await this.$store.dispatch('fetchItems')
     },
-    async fetchItem(slug) {
-      await this.$store.dispatch('fetchItem', slug)
+    itemParams(slug) {
+      return ['fetchItem', slug]
     }
   },
   components: {

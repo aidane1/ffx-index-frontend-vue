@@ -5,11 +5,11 @@ import store from './store'
 
 import PreloadLinks from './components/links'
 
-Vue.config.productionTip = false
-
 PreloadLinks.forEach((preloadLink) => {
-  Vue.component(...preloadLink)
+  Vue.component(preloadLink.name, preloadLink)
 })
+
+Vue.config.productionTip = false
 
 new Vue({
   router,

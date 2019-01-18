@@ -16,7 +16,7 @@ li(
       :key='record.id',
       :dropdown-item='record',
       :label='record.name',
-      :fetch-fn='dropdownFetchFn'
+      :fetch-params='dropdownFetchParams(record.slug)'
     )
 </template>
 <script>
@@ -33,23 +33,19 @@ export default {
   props: {
     records: {
       type: Array,
-      required: true,
-      default: () => []
+      required: true
     },
     fetchIndexFn: {
       type: Function,
-      required: true,
-      default: () => []
+      required: true
     },
-    dropdownFetchFn: {
+    dropdownFetchParams: {
       type: Function,
-      required: true,
-      default: () => []
+      required: true
     },
     displayData: {
       type: Object,
-      required: true,
-      default: () => {}
+      required: true
     }
   },
   computed: {
