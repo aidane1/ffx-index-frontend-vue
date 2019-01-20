@@ -11,16 +11,9 @@ import locations from './routes/locations'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    }
-
-    return { x: 0, y: 0 }
-  },
   routes: [
     ...home,
     ...items,
@@ -37,3 +30,13 @@ export default new Router({
     }
   ]
 })
+
+router.afterEach(() => {
+  const contentElement = document.querySelector('.subject-content')
+
+  if (contentElement && contentElement.scrollTo) {
+    contentElement.scrollTo(0, 0)
+  }
+})
+
+export default router

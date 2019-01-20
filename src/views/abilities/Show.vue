@@ -1,5 +1,5 @@
 <template lang="pug">
-div(v-if='ability')
+.m-b-md(v-if='ability')
   section
     h1.title {{ ability.name }}
       small.subject-content__title--secondary ({{ ability.ability_type }})

@@ -1,5 +1,5 @@
 <template lang="pug">
-preload-link(:path='monster.path', :fetch-params='fetchParams')
+preload-link(:path='monster.path', :fetch-params='fetchParams', :tag='tag')
   slot
 </template>
 <script>
@@ -9,6 +9,10 @@ export default {
     monster: {
       type: Object,
       required: true
+    },
+    tag: {
+      type: String,
+      default: 'a'
     }
   },
   computed: {

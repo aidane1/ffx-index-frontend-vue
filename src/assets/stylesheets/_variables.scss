@@ -80,9 +80,9 @@ $box-background-color: $grey-dark;
 $box-shadow: none;
 
 $link: $turquoise;
-$link-hover: lighten($link, 5);
-$link-focus: darken($link, 5);
-$link-active: darken($link, 5);
+$link-hover: lighten($link, 15);
+$link-focus: darken($link, 15);
+$link-active: darken($link, 15);
 $link-focus-border: $grey-light;
 
 $button-color: $primary;

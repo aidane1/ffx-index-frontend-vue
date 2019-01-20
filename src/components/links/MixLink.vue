@@ -1,12 +1,12 @@
 <template lang="pug">
-preload-link(:path='item.path', :fetch-params='fetchParams', :tag='tag')
+preload-link(:path='mix.path', :fetch-params='fetchParams', :tag='tag')
   slot
 </template>
 <script>
 export default {
-  name: 'ItemLink',
+  name: 'MixLink',
   props: {
-    item: {
+    mix: {
       type: Object,
       required: true
     },
@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     fetchParams() {
-      return ['fetchItem', this.item.slug]
+      return ['fetchMix', this.mix.slug]
     }
   }
 }
