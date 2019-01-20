@@ -3,7 +3,7 @@
   section
     h1.title {{ ability.name }}
       small.subject-content__title--secondary ({{ ability.ability_type }})
-    h2.subtitle {{ ability.effect }}
+    h2.subtitle.is-size-6-mobile {{ ability.effect }}
   hr
   section.content(v-if='ability.item')
     strong.subject-content__section-title Customization Cost

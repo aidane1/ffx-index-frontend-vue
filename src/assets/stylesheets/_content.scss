@@ -20,21 +20,28 @@
     }
   }
 
-  &__section-title {
-    display: block;
-    line-height: 1.25rem;
-    font-size: $text-bigger;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-  }
+  &__section {
+    &-title {
+      display: block;
+      line-height: 1.25rem;
+      font-size: $text-bigger;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
 
-  &__section-subtitle {
-    color: $grey-lighter;
-    font-size: $text-emphasis;
-    line-height: 1.1rem;
-
-    span, small {
+    &-subtitle {
+      color: $grey-lighter;
+      font-size: $text-emphasis;
       line-height: 1.1rem;
+  
+      span, small {
+        line-height: 1.1rem;
+      }
+    }
+
+    &-table {
+      border-radius: $table-radius;
+      margin-top: 1rem;
     }
   }
 

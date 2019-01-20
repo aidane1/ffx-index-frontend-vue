@@ -2,7 +2,7 @@
 div
   section
     h1.title Abilities
-    h2.is-size-6-mobile.subtitle Skills, magic, and equipment effects
+    h2.subtitle.is-size-6-mobile Skills, magic, and equipment effects
   hr
   section.box
     .subject-content__input-group
@@ -54,12 +54,12 @@ export default {
       return `Abilities matching "${this.search.trim()}"`
     },
     filteredAbilities() {
-      if (!this.search.trim()) {
-        return this.abilities
-      }
-
       const searchTerm = this.search.trim().toLowerCase()
       const searchAttributes = ['name', 'effect', 'ability_type']
+
+      if (!searchTerm) {
+        return this.abilities
+      }
 
       return this.abilities.filter((ability) => {
         return searchAttributes.some((attr) => ability[attr].toLowerCase().includes(searchTerm))

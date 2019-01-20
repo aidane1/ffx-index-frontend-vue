@@ -2,6 +2,7 @@
 .m-b-md(v-if='location')
   section
     h1.title {{ location.name }}
+    h2.subtitle.is-size-6-mobile Location
   hr
   section.content
     strong.subject-content__section-title Key Items

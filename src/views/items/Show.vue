@@ -3,7 +3,7 @@
   section
     h1.title {{ item.name }}
       small.subject-content__title--secondary ({{ item.effect_type }})
-    h2.subtitle {{ item.effect }}
+    h2.subtitle.is-size-6-mobile {{ item.effect }}
   hr
   section.content
     strong.subject-content__section-title Equipment Abilities

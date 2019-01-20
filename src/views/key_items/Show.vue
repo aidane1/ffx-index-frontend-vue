@@ -2,7 +2,7 @@
 .m-b-md(v-if='keyItem')
   section
     h1.title {{ keyItem.name }}
-    h2.subtitle {{ keyItem.description }}
+    h2.subtitle.is-size-6-mobile {{ keyItem.description }}
   hr
   section.content
     strong.subject-content__section-title Details

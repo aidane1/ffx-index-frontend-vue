@@ -2,7 +2,7 @@
 div
   section
     h1.title Key Items
-    h2.is-size-6-mobile.subtitle Essential items you don't want to miss
+    h2.subtitle.is-size-6-mobile Essential items you don't want to miss
   hr
   section.box
     .subject-content__input-group
@@ -54,12 +54,12 @@ export default {
       return `Key items matching "${this.search.trim()}"`
     },
     filteredKeyItems() {
-      if (!this.search.trim()) {
-        return this.keyItems
-      }
-
       const searchTerm = this.search.trim().toLowerCase()
       const searchAttributes = ['name', 'description']
+
+      if (!searchTerm) {
+        return this.keyItems
+      }
 
       return this.keyItems.filter((ability) => {
         return searchAttributes.some((attr) => ability[attr].toLowerCase().includes(searchTerm))

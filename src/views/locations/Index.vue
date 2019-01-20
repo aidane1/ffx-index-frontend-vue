@@ -2,7 +2,7 @@
 div
   section
     h1.title Locations
-    h2.is-size-6-mobile.subtitle Essential items you don't want to miss
+    h2.subtitle.is-size-6-mobile Brought to you by the Spira Tourism Board
   hr
   section.box
     .subject-content__input-group
@@ -54,12 +54,12 @@ export default {
       return `Locations matching "${this.search.trim()}"`
     },
     filteredLocations() {
-      if (!this.search.trim()) {
-        return this.locations
-      }
-
       const searchTerm = this.search.trim().toLowerCase()
       const searchAttributes = ['name', 'description']
+
+      if (!searchTerm) {
+        return this.locations
+      }
 
       return this.locations.filter((ability) => {
         return searchAttributes.some((attr) => ability[attr].toLowerCase().includes(searchTerm))

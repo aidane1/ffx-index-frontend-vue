@@ -2,7 +2,7 @@
 div
   section
     h1.title Items
-    h2.is-size-6-mobile.subtitle Items can help you, hurt enemies, and improve equipment
+    h2.subtitle.is-size-6-mobile Items can help you, hurt enemies, and improve equipment
   hr
   section.box
     .subject-content__input-group
@@ -54,12 +54,12 @@ export default {
       return `Items matching "${this.search.trim()}"`
     },
     filteredItems() {
-      if (!this.search.trim()) {
-        return this.items
-      }
-
       const searchTerm = this.search.trim().toLowerCase()
       const searchAttributes = ['name', 'effect', 'effect_type']
+
+      if (!searchTerm) {
+        return this.items
+      }
 
       return this.items.filter((item) => {
         return searchAttributes.some((attr) => item[attr].toLowerCase().includes(searchTerm))
