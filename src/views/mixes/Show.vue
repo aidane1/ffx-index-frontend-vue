@@ -11,7 +11,7 @@
         section.box.m-t-md
           .subject-content__input-group
             span.icon.is-medium.subject-content__input-group--icon
-              span.fas.fa-search
+              span.icon__search
             input.subject-content__input-group--input(
               v-model='search',
               type='text', 

@@ -4,12 +4,19 @@ provider:
   name: aws
   runtime: nodejs8.10
   profile: kieran
+  region: us-west-2
+  stage: production
+  environment:
+    NODE_ENV: production
 
 functions:
   server:
     handler: handler.server
     memorySize: 128
     events:
+      - http:
+          path: /
+          method: get
       - http:
           path: /{proxy+}
           method: get

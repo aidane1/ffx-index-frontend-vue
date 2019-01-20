@@ -1,7 +1,7 @@
 - Add ETag or other caching on Phoenix side
 - Remove unneeded bulma modules to cut down css
 - Add "names" to all vue components
-- Add a timed preload for monsters, abilities, etc after initial pageload
-- Set browser caching rules for assets
+- Add a timed preload for monsters, abilities, etc after initial pageload (done)
+- Set browser caching rules for assets (done)
 - Get fontawesome locally
-- http/2
+- http/2 (done)

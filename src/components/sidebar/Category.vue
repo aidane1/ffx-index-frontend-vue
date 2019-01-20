@@ -53,10 +53,10 @@ export default {
   computed: {
     sectionToggleClass() {
       if (this.expanded) {
-        return 'fas fa-chevron-down'
+        return 'icon__chevron icon__chevron--down'
       }
 
-      return 'fas fa-chevron-right'
+      return 'icon__chevron'
     }
   },
   methods: {

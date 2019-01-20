@@ -7,7 +7,7 @@ div
   section.box
     .subject-content__input-group
       span.icon.is-medium.subject-content__input-group--icon
-        span.fas.fa-search
+        span.icon__search
       input.subject-content__input-group--input(
         v-model='search',
         type='text', 
@@ -27,8 +27,7 @@ div
       .subject-content__list-item--information
         .subject-content__list-item--title {{ item.name }}
         .subject-content__list-item--subtitle {{ item.effect }}
-      .subject-content__list-item--icon
-        span.fas.fa-chevron-right
+      span.icon__chevron
 </template>
 <script>
 import IndexBase from '../base/IndexBase'
