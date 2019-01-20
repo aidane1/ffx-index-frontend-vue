@@ -16,10 +16,10 @@ export default {
   mounted() {
     // loads all "index" data after mount for
     // improved handling without affecting initial load speed
-    if (window.requestIdleCallback) {
+    if (window.requestIdleCallback && window.innerWidth > 1024) {
       window.requestIdleCallback(this.loadAllIndexes)
     } else {
-      setTimeout(this.loadAllIndexes, 3000)
+      setTimeout(this.loadAllIndexes, 10000)
     }
   },
   methods: {

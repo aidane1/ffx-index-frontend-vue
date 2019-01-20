@@ -1,4 +1,4 @@
-import axios from 'axios'
+import 'whatwg-fetch'
 
 const fetchData = async ({ commit }, stateObject, url, predicate, commitType) => {
   if (!!predicate) {
@@ -6,7 +6,8 @@ const fetchData = async ({ commit }, stateObject, url, predicate, commitType) =>
   }
 
   try {
-    const { data } = await axios.get(url)
+    const response = await window.fetch(url)
+    const data = await response.json()
 
     commit(commitType, { data, stateObject })
   } catch (e) {

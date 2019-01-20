@@ -4,3 +4,4 @@
 - Add a timed preload for monsters, abilities, etc after initial pageload
 - Set browser caching rules for assets
 - Get fontawesome locally
+- http/2
