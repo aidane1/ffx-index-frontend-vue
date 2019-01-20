@@ -17,6 +17,13 @@ $toggle-button-collapsed-offset: calc(
   2px
 );
 
+$text-smaller: 0.8rem;
+$text-small: 0.9rem;
+$text-normal: 1rem;
+$text-emphasis: 1.1rem;
+$text-big: 1.25rem; 
+$text-bigger: 1.35rem; 
+
 $sidebar-padding: 0.6em;
 $content-padding: 1.6em;
 
@@ -121,4 +128,6 @@ $dropdown-item-color: $text;
 
 $progress-value-background-color: $grey-lighter;
 
-$bulmaswatch-import-font: true !default;
+$bulmaswatch-import-font: false !default;
+
+$box-radius: 3px;

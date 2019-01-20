@@ -1,6 +1,34 @@
 <template lang="pug">
-pre
-  code {{ abilities }}
+div
+  section
+    h1.title Abilities
+    h2.is-size-6-mobile.subtitle Skills, magic, and equipment effects
+  hr
+  section.box
+    .subject-content__input-group
+      span.icon.is-medium.subject-content__input-group--icon
+        span.fas.fa-search
+      input.subject-content__input-group--input(
+        v-model='search',
+        type='text', 
+        placeholder='Search for abilities'
+      )
+  section.box.subject-content__list
+    .subject-content__list-header {{ searchLabel }}
+
+    div(v-if='!filteredAbilities.length') Nothing here!
+    ability-link.subject-content__list-item(
+      v-for='ability in filteredAbilities',
+      :key='ability.id'
+      :ability='ability', 
+      tag='div',
+      v-else
+    )
+      .subject-content__list-item--information
+        .subject-content__list-item--title {{ ability.name }}
+        .subject-content__list-item--subtitle {{ ability.effect }}
+      .subject-content__list-item--icon
+        span.fas.fa-chevron-right
 </template>
 <script>
 import IndexBase from '../base/IndexBase'
@@ -9,6 +37,7 @@ export default {
   extends: IndexBase,
   data() {
     return {
+      search: '',
       stateKey: 'abilities',
       fetchKey: 'fetchAbilities'
     }
@@ -16,6 +45,25 @@ export default {
   computed: {
     abilities() {
       return this.records
+    },
+    searchLabel() {
+      if (!this.search.trim()) {
+        return 'All abilities'
+      }
+
+      return `Abilities matching "${this.search.trim()}"`
+    },
+    filteredAbilities() {
+      if (!this.search.trim()) {
+        return this.abilities
+      }
+
+      const searchTerm = this.search.trim().toLowerCase()
+      const searchAttributes = ['name', 'effect', 'ability_type']
+
+      return this.abilities.filter((ability) => {
+        return searchAttributes.some((attr) => ability[attr].toLowerCase().includes(searchTerm))
+      })
     }
   }
 }

@@ -1,5 +1,5 @@
 <template lang="pug">
-preload-link(:path='ability.path', :fetch-params='fetchParams')
+preload-link(:path='ability.path', :fetch-params='fetchParams', :tag='tag')
   slot
 </template>
 <script>
@@ -9,6 +9,10 @@ export default {
     ability: {
       type: Object,
       required: true
+    },
+    tag: {
+      type: String,
+      default: 'a'
     }
   },
   computed: {
