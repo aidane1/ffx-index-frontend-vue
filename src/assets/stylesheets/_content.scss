@@ -16,8 +16,20 @@
     &--secondary {
       color: $grey-light;
       margin-left: 0.5rem;
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
+  }
+
+  &__section-title {
+    display: block;
+    line-height: 1.25rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  &__section-subtitle {
+    color: $grey-lighter;
+    font-size: 1.1rem;
   }
 }
 .sidebar-collapsed {

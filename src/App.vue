@@ -2,7 +2,7 @@
 .main-container(:class='{ "sidebar-collapsed": !sidebarExpanded}')
   sidebar.sidebar(@toggle-sidebar='sidebarExpanded = !sidebarExpanded')
   main.section.subject-content
-    router-view.container
+    router-view
 </template>
 <script>
 import Sidebar from '@/components/Sidebar'

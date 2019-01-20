@@ -1,4 +1,6 @@
 <template lang="pug">
+//- This cant use the preload-link component since we are specifying
+//- the preload and the link on separate parts
 li( 
   @mouseover='startPreload', 
   @mouseout='cancelPreload',
