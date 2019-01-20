@@ -26,8 +26,10 @@
               th Item Two
           tbody
             tr(v-for='combination, index in filteredCombinations', :key='index')
-              td {{ combination.item_one.name}}
-              td {{ combination.item_two.name}}
+              td 
+                item-link(:item='combination.item_one') {{ combination.item_one.name}}
+              td 
+                item-link(:item='combination.item_two') {{ combination.item_two.name}}
 </template>
 <script>
 import ShowBase from '../base/ShowBase.vue'

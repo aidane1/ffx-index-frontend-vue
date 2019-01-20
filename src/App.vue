@@ -13,6 +13,27 @@ export default {
       sidebarExpanded: true
     }
   },
+  mounted() {
+    // loads all "index" data after mount for
+    // improved handling without affecting initial load speed
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(this.loadAllIndexes)
+    } else {
+      setTimeout(this.loadAllIndexes, 3000)
+    }
+  },
+  methods: {
+    async loadAllIndexes() {
+      await Promise.all([
+        this.$store.dispatch('fetchAbilities'),
+        this.$store.dispatch('fetchItems'),
+        this.$store.dispatch('fetchKeyItems'),
+        this.$store.dispatch('fetchLocations'),
+        this.$store.dispatch('fetchMixes'),
+        this.$store.dispatch('fetchMonsters')
+      ])
+    }
+  },
   components: {
     Sidebar
   }

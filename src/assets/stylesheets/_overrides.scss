@@ -325,3 +325,9 @@ body>.navbar {
   display: flex;
   justify-content: space-between;
 }
+
+.table.is-half-td {
+  td {
+    width: 50%
+  }
+}
