@@ -1,0 +1,17 @@
+service: ffx-index-frontend
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  server:
+    handler: handler.server
+    memorySize: 128
+    events:
+      - http:
+          path: /{proxy+}
+          method: get
+
+plugins:
+  - serverless-offline
