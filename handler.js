@@ -4,9 +4,10 @@ const sls = require('serverless-http')
 const app = express()
 
 app.use(compression())
-app.use(express.static('dist'))
+app.use(express.static('dist', { maxAge: 1000 * 60 * 60 * 24 }))
 
 app.use((req, res) => {
+  res.set('Cache-Control', 'public, max-age=300')
   res.sendFile(__dirname + '/dist/index.html')
 })
 

@@ -1,9 +1,8 @@
 <template lang="pug">
-h1 home
+div
+  h1.is-size-1.has-text-centered FFX Index
 </template>
 <script>
-// @ is an alias to /src
-
 export default {
   name: 'Home'
 }

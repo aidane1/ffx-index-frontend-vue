@@ -1,7 +1,7 @@
 <template lang="pug">
 aside.menu
   .sidebar__toggle-button(@click='toggleSidebar')
-    i.fas.fa-bars
+    span.icon__bars
   .menu-list__container
     ul.menu-list.menu-list-spaced
       ability

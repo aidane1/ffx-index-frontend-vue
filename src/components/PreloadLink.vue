@@ -37,8 +37,8 @@ export default {
   },
   methods: {
     startPreload() {
-      this.timeoutFn = setTimeout(async () => {
-        await this.$store.dispatch(...this.fetchParams)
+      this.timeoutFn = setTimeout(() => {
+        this.$store.dispatch(...this.fetchParams)
       }, this.timeout)
     },
     cancelPreload() {

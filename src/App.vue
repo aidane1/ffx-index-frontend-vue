@@ -1,7 +1,7 @@
 <template lang="pug">
 .main-container(:class='{ "sidebar-collapsed": !sidebarExpanded}')
   sidebar.sidebar(@toggle-sidebar='sidebarExpanded = !sidebarExpanded')
-  main.section.subject-content
+  main.subject-content
     router-view
 </template>
 <script>
